@@ -47,7 +47,7 @@ class MessageFragment : Fragment() {
             tvText.text = it
         })
         btnGoSettings.setOnClickListener {
-            Navigation.findNavController(requireView()).navigate(R.id.navigation_settings)
+            Navigation.findNavController(requireView()).navigate(R.id.action_to_settings)
         }
     }
 

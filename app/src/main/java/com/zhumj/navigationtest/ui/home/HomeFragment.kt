@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
             tvText.text = it
         })
         btnGoBlank.setOnClickListener {
-            Navigation.findNavController(requireView()).navigate(R.id.navigation_message)
+            Navigation.findNavController(requireView()).navigate(R.id.action_to_message)
         }
     }
 

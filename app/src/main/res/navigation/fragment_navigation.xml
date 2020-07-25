@@ -5,6 +5,41 @@
     android:id="@+id/fragment_navigation"
     app:startDestination="@id/navigation_home">
 
+    <!--
+         app:popUpTo  这是出栈直到某个元素
+         app:popUpToInclusive  配合app:popUpTo使用，用来判断到达指定元素时是否把指定元素也出栈
+         app:launchSingleTop  这是在跳转本身时保存单实例
+         app:destination  这是这个action要跳转的目的地
+
+         前两个是移动到目的地的动画，后两个是离开目的地的动画。
+         app:enterAnim  是这个action目的地进入的动画,是Fragment2入场的动画。
+         app:exitAnim  是这个action所在元素离开的动画，是Fargment1离场的动画。
+         app:popEnterAnim  是这个按下返回动作，目的地出栈时，action所在元素入场的动画，是Fargment1入场的动画。
+         app:popExitAnim  是这个按下返回动作，目的地出栈时离开的动画，是Fragment2离场的动画
+         -->
+    <action
+        android:id="@+id/action_settings_to_top"
+        app:popUpTo="@id/navigation_message"
+        app:popUpToInclusive="true"
+        app:enterAnim="@anim/enter_anim"
+        app:exitAnim="@anim/exit_anim"
+        app:popEnterAnim="@anim/pop_enter_anim"
+        app:popExitAnim="@anim/pop_exit_anim"/>
+
+    <action android:id="@+id/action_to_message"
+        app:destination="@id/navigation_message"
+        app:enterAnim="@anim/enter_anim"
+        app:exitAnim="@anim/exit_anim"
+        app:popEnterAnim="@anim/pop_enter_anim"
+        app:popExitAnim="@anim/pop_exit_anim"/>
+
+    <action android:id="@+id/action_to_settings"
+        app:destination="@id/navigation_settings"
+        app:enterAnim="@anim/enter_anim"
+        app:exitAnim="@anim/exit_anim"
+        app:popEnterAnim="@anim/pop_enter_anim"
+        app:popExitAnim="@anim/pop_exit_anim"/>
+
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.zhumj.navigationtest.ui.home.HomeFragment"
@@ -34,23 +69,6 @@
         android:name="com.zhumj.navigationtest.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/settings_fragment">
-
-        <!--
-         app:popUpTo  这是出栈直到某个元素
-         app:popUpToInclusive  配合app:popUpTo使用，用来判断到达指定元素时是否把指定元素也出栈
-         app:launchSingleTop  这是在跳转本身时保存单实例
-         app:destination  这是这个action要跳转的目的地
-
-         前两个是移动到目的地的动画，后两个是离开目的地的动画。
-         app:enterAnim  是这个action目的地进入的动画,是Fragment2入场的动画。
-         app:exitAnim  是这个action所在元素离开的动画，是Fargment1离场的动画。
-         app:popEnterAnim  是这个按下返回动作，目的地出栈时，action所在元素入场的动画，是Fargment1入场的动画。
-         app:popExitAnim  是这个按下返回动作，目的地出栈时离开的动画，是Fragment2离场的动画
-         -->
-        <action
-            android:id="@+id/action_to_top"
-            app:popUpTo="@id/navigation_message"
-            app:popUpToInclusive="true"/>
 
     </fragment>
 

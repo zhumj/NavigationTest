@@ -56,7 +56,7 @@ class SettingsFragment : Fragment() {
         if (item.itemId == android.R.id.home) {
             Log.d("111111111111111", "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
             Log.d("11111111111111111", "SettingsFragment onOptionsItemSelected")
-            Navigation.findNavController(requireView()).navigate(R.id.action_to_top)
+            Navigation.findNavController(requireView()).navigate(R.id.action_settings_to_top)
             return true
         }
         return super.onOptionsItemSelected(item)
